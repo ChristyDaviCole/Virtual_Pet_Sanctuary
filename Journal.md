@@ -15,3 +15,9 @@ How did your mental model change when moving from a single static pet to a dynam
 I'm not actually sure how to answer this question/what it means. I know that I started out with just one pet and its hunger level & feed pet button and once I started creating more pets from the same template, I ran into some challenges with the buttons and then figuring out how to remove the old generic card/button. 
 How does the Pet class make it easier to handle multiple pets compared to creating individual objects manually?
 It's easier to create each new pet from a template rather than coding them individually becuase it saves time and effort not having to repeat the steps every time.
+
+Journal Prompt 4:
+What bugs or unexpected behaviors did you catch during testing?
+I guess I didn't expect the new pet name input field to remain filled with the pet name that I added. After resetting it with .trim to reset it to an empty field, then I wanted to figure out how to prevent it from going out of focus. Fixed those things.
+If you used an AI tutor, what was the most helpful suggestion it gave you, and why did you choose to (or not choose to) implement it?
+I found myself asking it about potential improvements proactively before receiving suggestions.
