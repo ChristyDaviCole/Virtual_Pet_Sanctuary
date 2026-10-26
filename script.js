@@ -52,7 +52,12 @@ class Pet {
 
     feed() {
 
-        this.hunger = this.hunger - 10
+        if (this.hunger >= 10) {
+
+            this.hunger = this.hunger - 10
+
+        }
+
 
     }
 
@@ -64,12 +69,43 @@ const pet2 = new Pet("Peaches", "apartment kitty");
 console.log(pet1.describe());
 console.log(pet2.describe());
 
-const hungerDisplay = document.getElementById("pet-hunger");
-const feedButton = document.getElementById("feed-bttn");
+const petNameInput = document.getElementById("pet-name");
+const addPetBttn = document.getElementById("add-pet-bttn");
+const sanctuaryContainer = document.getElementById("sanctuary");
 
-feedButton.addEventListener("click", () => {
+addPetBttn.addEventListener("click", () => {
 
-    pet1.feed();
-    hungerDisplay.textContent = `Hunger = ${pet1.hunger}`;
+    if (petNameInput.value.trim() ==="") {
 
-});
+        petNameInput.focus();
+
+        return;
+
+    }
+
+    let newPet = new Pet(petNameInput.value, "apartment kitty");
+
+    const petCard = document.createElement("div");
+    const petHunger = document.createElement("p");
+    
+    const petFeedButton = document.createElement("button");
+    petFeedButton.textContent = "Feed Pet";
+
+    petFeedButton.addEventListener("click", () => {
+
+        newPet.feed();
+        petHunger.textContent = `Hunger = ${newPet.hunger}`;
+        
+    })
+
+    petCard.textContent = newPet.name;
+    petHunger.textContent = `Hunger: ${newPet.hunger}`;
+
+    petCard.appendChild(petHunger);
+    petCard.appendChild(petFeedButton);
+    sanctuaryContainer.appendChild(petCard);
+
+    petNameInput.value = "";
+    petNameInput.focus();
+
+})

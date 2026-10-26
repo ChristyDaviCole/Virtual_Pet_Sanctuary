@@ -9,3 +9,9 @@ What was the process of connecting your JavaScript class method to an HTML butto
 I used getElementById calls to target the feed button and hunger display, used addEventListener to run the feed method after a click event, then called the feed method on pet1 & updated its hunger display with .textContent.
 What part of the DOM manipulation felt most intuitive, and what part was confusing?
 The part that felt most intuitive was using document.getElementById() to select the hunger display and Feed Pet button. The part that was confusing was the addEventListener() function and how to connect the button click to the feed() method and update the hunger display using .textContent.
+
+Journal Prompt 3
+How did your mental model change when moving from a single static pet to a dynamic list of pet objects? 
+I'm not actually sure how to answer this question/what it means. I know that I started out with just one pet and its hunger level & feed pet button and once I started creating more pets from the same template, I ran into some challenges with the buttons and then figuring out how to remove the old generic card/button. 
+How does the Pet class make it easier to handle multiple pets compared to creating individual objects manually?
+It's easier to create each new pet from a template rather than coding them individually becuase it saves time and effort not having to repeat the steps every time.
